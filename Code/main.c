@@ -137,11 +137,12 @@ int main(){
  */
 static PyObject *send_array(int *Array, PyObject *pFunction){
 
-  npy_intp dims[2];
+  // dimension of the array
+  npy_intp dims[2]; 
   dims[0] = 5;
   dims[1] = 4;
 
-
+  
   PyObject *pGpValue = PyArray_SimpleNewFromData(2, dims, NPY_INT, Array);
 
   PyObject *pGpArgs = PyTuple_New(1);
